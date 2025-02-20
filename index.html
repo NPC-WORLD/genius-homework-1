@@ -3,22 +3,39 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Главная страница -->
 		<title>Beauty Zone</title>
+		<!-- Fonts "Play"-->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Fonts "Roboto" -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Styles -->
+		<link rel="stylesheet" href="css/styles.css" />
 	</head>
 	<body>
 		<header>
 			<div class="container">
-				<!-- Верхний Логотип -->
-				<a href="#">
-					<img src="#" alt="Beauty Zone Logo" />
-				</a>
+				<!-- Верхний Логотип в виде текста  -->
+				<a class="logo" href="index.html"><span>beauty zone</span></a>
 				<!-- Навигация по сайту -->
 				<nav>
 					<ul class="header-menu">
-						<li><a href="#">Про нас</a></li>
-						<li><a href="#">Чому ми</a></li>
-						<li><a href="#">Наші процедури</a></li>
-						<li><a href="#">Контакти</a></li>
+						<li><a class="link" href="#about-us-section">Про нас</a></li>
+						<li><a class="link" href="#why-we-section">Чому ми</a></li>
+						<li>
+							<a class="link" href="#our-procedures-section">Наші процедури</a>
+						</li>
+						<li><a class="link" href="#contacts-section">Контакти</a></li>
 					</ul>
 				</nav>
 				<!-- Социальные сети  -->
@@ -38,24 +55,31 @@
 		<main>
 			<section>
 				<p>Косметологічна клініка</p>
-				<h1>beauty zone</h1>
+				<h1 class="hero-title">beauty zone</h1>
 				<button class="button" type="button">Замовити дзвінок</button>
-				<p>Запишись та отримай безкоштовну консультацію нашого косметолога</p>
+				<p class="consultation">
+					Запишись та отримай безкоштовну консультацію нашого косметолога
+				</p>
 			</section>
-			<section>
-				<h2>Перевтілюйтесь в <span>beauty zone!</span></h2>
+			<section id="about-us-section">
+				<h2 class="about-us-title section-title">
+					Перевтілюйтесь в <span class="accent">beauty zone!</span>
+				</h2>
 				<p>
 					Наша косметологічна клініка пропонує вам професійні послуги з догляду
 					за шкірою обличчя та тіла.
 				</p>
 				<p>
-					B <span>beauty zone</span> ми гарантуємо найвищі стандарти якості та
-					приємний сервіс. Наші косметологічні процедури та препарати допоможуть
-					вам підтримувати свою красу та молодість. З нами краса назавжди!
+					B <span class="accent-text">beauty zone</span> ми гарантуємо найвищі
+					стандарти якості та приємний сервіс. Наші косметологічні процедури та
+					препарати допоможуть вам підтримувати свою красу та молодість. З нами
+					краса назавжди!
 				</p>
 			</section>
-			<section>
-				<h2>Чому люди <span>обирають нас</span></h2>
+			<section id="why-we-section">
+				<h2 class="why-we-title section-title">
+					Чому люди <span class="accent">обирають нас</span>
+				</h2>
 				<p>
 					Всі наші косметологи мають вищу медичну освіту та стаж роботи від 5
 					років
@@ -69,11 +93,15 @@
 					переробити
 				</p>
 			</section>
-			<section>
-				<h2>Наші <span>процедури</span></h2>
+			<section id="our-procedures-section">
+				<h2 class="our-procedures-title section-title">
+					Наші <span class="accent">процедури</span>
+				</h2>
 			</section>
-			<section>
-				<h2>Як нас <span>знайти</span></h2>
+			<section id="contacts-section">
+				<h2 class="contacts-title section-title">
+					Як нас <span class="accent">знайти</span>
+				</h2>
 				<iframe
 					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2296.325739906736!2d30.772927425801598!3d50.505843378959746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4d97de411b701%3A0x48116b28f7f00d94!2z0LLRg9C70LjRhtGPINCi0LDRgNCw0YHQsCDQqNC10LLRh9C10L3QutCwLCA1LCDQkdGA0L7QstCw0YDQuCwg0JrQuNGX0LLRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwg0KPQutGA0LDRl9C90LAsIDA3NDAw!5e1!3m2!1suk!2spl!4v1739980517890!5m2!1suk!2spl"
 					width="600"
