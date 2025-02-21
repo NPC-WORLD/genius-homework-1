@@ -10,17 +10,45 @@
 	--color-secondary-yellow: #ffd02b;
 }
 
+/* For all */
 body {
 	background-color: var(--color-primary-white);
 	font-family: Roboto, sans-serif;
 	font-size: 18px;
 	font-weight: 400;
+	line-height: 1.2;
 }
 
-.logo {
-	color: var(--color-primary-blue);
+ul {
+	list-style-type: none;
+}
+
+img {
+	background-color: black;
+}
+
+/* Header */
+.link {
+	color: var(--color-primary-navy);
 	text-decoration: none;
-	text-transform: capitalize;
+}
+
+.link:hover {
+	color: var(--color-primary-blue);
+	font-weight: 700;
+}
+
+/* Main */
+
+.centering {
+	text-align: center;
+}
+
+.hero-section {
+	background-image: url(../img/procedure.jpg);
+	background-repeat: no-repeat;
+	background-position: left;
+	background-size: cover;
 }
 
 .hero-title {
@@ -46,6 +74,25 @@ body {
 	background-color: transparent;
 }
 
+.consultation {
+	color: var(--color-secondary-gray-dark);
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.about-us-text {
+	line-height: 1.7;
+}
+
+.why-we-text {
+	line-height: 1.3;
+}
+
+.accent-about-us {
+	color: var(--color-primary-blue);
+	text-transform: capitalize;
+}
+
 .accent {
 	color: var(--color-primary-blue);
 }
@@ -59,19 +106,32 @@ body {
 	color: var(--color-primary-navy);
 	font-size: 64px;
 	font-weight: 700;
-	line-height: 1.15;
 }
 
-.consultation {
-	color: var(--color-secondary-gray-dark);
+/* Footer */
+
+.address-link {
+	font-size: 16px;
+	color: black; /* Поменять потом на белый */
+	text-decoration: none;
+	font-style: normal;
 }
 
-.link {
-	color: var(--color-primary-navy);
+.address-link:hover {
+	color: var(--color-primary-blue);
+}
+
+.privacy-policy {
+	font-size: 16px;
+	color: black; /* Поменять потом на белый */
 	text-decoration: none;
 }
 
-.link:hover {
+.privacy-policy:hover {
 	color: var(--color-primary-blue);
-	font-weight: 700;
+}
+
+.copyright {
+	font-size: 13px;
+	color: var(--color-secondary-gray-light);
 }
