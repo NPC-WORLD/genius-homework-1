@@ -19,6 +19,13 @@ body {
 	line-height: 1.2;
 }
 
+footer {
+	background-color: var(--color-primary-navy);
+}
+a {
+	text-decoration: none;
+}
+
 ul {
 	list-style-type: none;
 }
@@ -30,7 +37,6 @@ img {
 /* Header */
 .link {
 	color: var(--color-primary-navy);
-	text-decoration: none;
 }
 
 .link:hover {
@@ -110,10 +116,19 @@ img {
 
 /* Footer */
 
+.link-footer {
+	color: var(--color-primary-white); /* Поменять потом на белый */
+}
+
+.link-footer:hover {
+	color: var(--color-primary-blue);
+	font-weight: 700;
+}
+
 .address-link {
 	font-size: 16px;
-	color: black; /* Поменять потом на белый */
-	text-decoration: none;
+	color: var(--color-primary-white); /* Поменять потом на белый */
+
 	font-style: normal;
 }
 
@@ -123,8 +138,7 @@ img {
 
 .privacy-policy {
 	font-size: 16px;
-	color: black; /* Поменять потом на белый */
-	text-decoration: none;
+	color: var(--color-primary-white); /* Поменять потом на белый */
 }
 
 .privacy-policy:hover {
