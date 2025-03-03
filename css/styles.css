@@ -43,12 +43,20 @@
 }
 
 /* For all */
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
 body {
 	background-color: var(--color-primary-white);
 	font-family: Roboto, sans-serif;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 1.2;
+	margin: 0; /* Убираем автоматически добавленные браузером отступы */
 }
 
 footer {
@@ -56,24 +64,60 @@ footer {
 }
 a {
 	text-decoration: none;
+	display: inline-block; /* Блочный элемент, чтобы можно было задать ширину и высоту */
 }
 
 ul {
-	list-style-type: none;
+	padding: 0; /* Убираем автоматически добавленные браузером отступы */
+	margin: 0; /* Убираем автоматически добавленные браузером отступы */
+	list-style-type: none; /* Убираем маркеры у списка */
 }
 
 img {
 	background-color: black;
 }
 
+.container {
+	width: 100%; /* Занимает всю доступную ширину родительского элемента */
+	max-width: 1288px; /* Ширина контента + 48px, потому что box-sitizing:border box, не входят в эту ширину */
+	margin: 0 auto; /* Центрируем контент */
+	padding: 0 24px; /* Отступы от краёв контейнера, чтобы не прилипали */
+}
+
 /* Header */
+
+.header-container {
+	display: flex; /* Делаем flex-контейнер */
+	align-items: center; /* Выравниваем элементы по вертикали */
+	gap: 40px; /* Расстояние между элементами */
+}
+
+.header-nav {
+	display: flex; /* Делаем flex-контейнер */
+	align-items: center; /* Выравниваем элементы по центру */
+	flex-grow: 1; /* Растягиваем меню на всё доступное пространство */
+	gap: 40px; /* Расстояние между элементами */
+}
+
+.header-menu {
+	display: flex; /* Делаем flex-контейнер */
+	gap: 56px; /* Расстояние между элементами */
+	flex-grow: 1; /* Растягиваем меню на всё доступное пространство */
+	justify-content: center; /* Выравниваем пункты меню по центру */
+}
+
+.header-social-icons {
+	display: flex; /* Делаем flex-контейнер */
+	gap: 32px; /* Расстояние между элементами */
+}
+
 .link {
 	color: var(--color-primary-navy);
 }
 
 .link:hover {
 	color: var(--color-primary-blue);
-	font-weight: 700;
+	font-weight: none; /* Возможно потом вернуть на 700 */
 }
 
 /* Main */
@@ -154,7 +198,7 @@ img {
 
 .link-footer:hover {
 	color: var(--color-primary-blue);
-	font-weight: 700;
+	font-weight: none; /* Возможно потом вернуть на 700 */
 }
 
 .address-link {
@@ -180,4 +224,30 @@ img {
 .copyright {
 	font-size: 13px;
 	color: var(--color-secondary-gray-light);
+}
+
+.footer {
+	padding: 56px 0;
+}
+
+.footer-container {
+	display: flex; /* Делаем flex-контейнер */
+	gap: 20px; /* Расстояние между элементами */
+}
+
+.footer-nav {
+	display: flex; /* Делаем flex-контейнер */
+	flex-grow: 1; /* Растягиваем меню на всё доступное пространство */
+	gap: 20px; /* Расстояние между элементами */
+}
+
+.footer-address {
+	display: flex; /* Делаем flex-контейнер */
+	flex-direction: column; /* Столбец */
+	flex-grow: 1; /* Растягиваем меню на всё доступное пространство */
+}
+
+.footer-social-icons {
+	display: flex; /* Делаем flex-контейнер */
+	gap: 20px; /* Расстояние между элементами */
 }
