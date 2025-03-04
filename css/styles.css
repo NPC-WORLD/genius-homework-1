@@ -44,6 +44,16 @@
 
 /* For all */
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin-top: 0; /* Убираем автоматически добавленные браузером верхние отступы, потому что с нижними отступами надо будет ещё работать  */
+}
+
 *,
 *::after,
 *::before {
@@ -62,6 +72,11 @@ body {
 footer {
 	background-color: var(--color-primary-navy);
 }
+
+address {
+	font-style: normal;
+}
+
 a {
 	text-decoration: none;
 	display: inline-block; /* Блочный элемент, чтобы можно было задать ширину и высоту */
@@ -190,6 +205,29 @@ img {
 	font-weight: 700;
 }
 
+/* Our-procedures-section */
+
+.procedure-photo {
+	border-radius: 4px 120px; /* Скругляем углы */
+}
+
+.procedure {
+	background-image: linear-gradient(
+		180.05deg,
+		rgba(1, 28, 68, 0) 48.53%,
+		rgba(1, 28, 68, 0.725825) 84.61%,
+		#011c44 101.39%
+	);
+}
+
+/* Contacts-section */
+
+.contacts-map {
+	flex-shrink: 0; /* Запрещаем уменьшение размера */
+	border: none; /* Убираем рамку */
+	border-radius: 32px; /* Скругляем углы */
+}
+
 /* Footer */
 
 .link-footer {
@@ -204,8 +242,6 @@ img {
 .address-link {
 	font-size: 16px;
 	color: var(--color-primary-white); /* Поменять потом на белый */
-
-	font-style: normal;
 }
 
 .address-link:hover {
@@ -231,7 +267,7 @@ img {
 }
 
 .footer-container {
-	display: flex; /* Делаем flex-контейнер */
+	display: flex; /* Делаем flex-контейнер: nav,address, info встали в ряд */
 	gap: 20px; /* Расстояние между элементами */
 }
 
@@ -241,13 +277,37 @@ img {
 	gap: 20px; /* Расстояние между элементами */
 }
 
+.footer-logo {
+	flex-grow: 1; /* Растягиваем лого на всё доступное пространство */
+}
+
+.footer-menu {
+	flex-grow: 1; /* Растягиваем меню на всё доступное пространство */
+}
+
+.footer-menu li:not(:last-child) {
+	margin-bottom: 16px; /* Отступ снизу, кроме последнего */
+}
+
 .footer-address {
 	display: flex; /* Делаем flex-контейнер */
+	flex-grow: 1; /* Растягиваем адрес на всё доступное пространство */
 	flex-direction: column; /* Столбец */
-	flex-grow: 1; /* Растягиваем меню на всё доступное пространство */
+	gap: 16px; /* Расстояние между элементами */
+}
+
+.address-list li:not(:last-child) {
+	margin-bottom: 16px; /* Отступ снизу, кроме последнего */
 }
 
 .footer-social-icons {
 	display: flex; /* Делаем flex-контейнер */
 	gap: 20px; /* Расстояние между элементами */
+}
+
+.footer-info {
+	display: flex;
+	flex-direction: column; /* Располагаем элементы по вертикали */
+	gap: 16px; /* Добавляем отступы между элементами */
+	flex-grow: 1; /* Растягиваем информацию на всё доступное пространство */
 }
