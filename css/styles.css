@@ -52,6 +52,7 @@ h5,
 h6,
 p {
 	margin-top: 0; /* Убираем автоматически добавленные браузером верхние и нижние отступы, потому что с нижними отступами надо будет ещё работать  */
+	margin-bottom: 0; /* Убираем автоматически добавленные браузером верхние и нижние отступы, потому что с нижними отступами надо будет ещё работать  */
 }
 
 .section {
@@ -208,9 +209,42 @@ img {
 	font-size: 64px;
 	font-weight: 700;
 }
+
+.section:not(:first-of-type) .section-title {
+	margin-bottom: 48px;
+}
+
 /* About us section */
 
-.session-photo {
+.about-us-container {
+	display: flex; /* Делаем flex-контейнер */
+	gap: 32px; /* Расстояние между элементами */
+}
+
+.about-us-content {
+	display: flex; /* Делаем flex-контейнер */
+	flex-direction: column; /* Располагаем элементы по вертикали */
+	gap: 40px; /* Расстояние между элементами */
+}
+
+.about-us-sessions {
+	position: relative; /* Позиционирование относительно родителя */
+	display: flex; /* Делаем flex-контейнер */
+	flex-direction: column; /* Располагаем элементы по вертикали */
+}
+
+.about-us-images {
+	position: relative; /* Позиционирование относительно родителя */
+	display: flex; /* Делаем flex-контейнер */
+	flex-direction: column; /* Располагаем элементы по вертикали */
+	gap: 40px; /* Расстояние между элементами */
+}
+
+.about-us-photo .after {
+	position: absolute; /* Позиционирование относительно родителя */
+}
+
+.about-us-photo {
 	border-radius: 50%;
 }
 
