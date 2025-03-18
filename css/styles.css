@@ -127,6 +127,13 @@ img {
 .header-social-icons {
 	display: flex; /* Делаем flex-контейнер */
 	gap: 32px; /* Расстояние между элементами */
+	color: var(--color-primary-navy); /* Цвет иконок */
+}
+
+.header-social-icons svg {
+	color: var(--color-primary-navy); /* Цвет иконок */
+	width: 32px;
+	height: 32px;
 }
 
 .link {
@@ -285,7 +292,9 @@ img {
 }
 
 .wy-why-advantages svg {
-	flex-shrink: 0; /* Запрещаем уменьшение размера */
+	width: 48px;
+	height: 48px;
+	color: var(--color-primary-blue);
 }
 
 /* Our-procedures-section */
@@ -328,7 +337,6 @@ img {
 }
 
 .contacts-map {
-	flex-shrink: 0; /* Запрещаем уменьшение размера */
 	border: none; /* Убираем рамку */
 	border-radius: 32px; /* Скругляем углы */
 }
@@ -416,6 +424,12 @@ img {
 	/* === Контейнер для иконок и ссылок на социальные сети === */
 	display: flex; /* Делаем flex-контейнер */
 	gap: 20px; /* Расстояние между элементами */
+}
+
+.footer-social-icons svg {
+	color: var(--color-primary-white); /* Цвет иконок */
+	width: 42px;
+	height: 42px;
 }
 
 .footer-info {
