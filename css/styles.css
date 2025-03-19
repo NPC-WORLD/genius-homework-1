@@ -309,25 +309,53 @@ img {
 .procedures-list {
 	/* Контейнер отвечает за список процедур */
 	display: flex; /* Делаем flex-контейнер */
-	gap: 20px; /* Расстояние между элементами */
+	gap: 16px; /* Расстояние между элементами */
 	flex-wrap: wrap; /* Перенос элементов на новую строку */
 }
 
-.procedure-item {
-	/* Контейнер отвечает за одну процедуру */
-	display: flex; /* Делаем flex-контейнер */
-	flex-basis: calc(
-		(100% - 40px) / 3
-	); /* Ширина элемента 100 процентов минус 40 gap 20+20 расстояние между карточками */ /* Ширина элемента */
+.procedure-item,
+.procedure {
+	display: flex;
+	width: 344px; /* Ширина элемента */
+	height: 456px; /* Высота элемента */
+	justify-content: center; /* Выравниваем элементы по центру */
+	align-items: center; /* Выравниваем элементы по центру */
 }
 
-.procedure-item {
-	height: 456px; /* Высота фото */
-	width: 344px;
+/* flex-basis: calc((100% - 32px) / 3); */
+
+/* Carousel */
+.carousel-button {
+	display: flex; /* Располагаем элементы в строку */
+	align-items: center; /* Выравниваем по центру */
+	justify-content: center; /* Выравниваем по центру */
+	width: 44px; /* Ширина кнопки */
+	height: 44px; /* Высота кнопки */
+	border-radius: 50%; /* Круг кнопки */
+	border: 1px solid var(--color-primary-navy); /* Цвет рамки */
+	background-color: transparent; /* Прозрачный фон кнопки*/
+	padding: 0; /* Убираем внутренние отступы */
+	cursor: pointer; /* Курсор при наведении */
+	flex-shrink: 0; /* Запрещаем уменьшение размера */
 }
 
-.procedure-photo {
-	border-radius: 4px 120px; /* Скругляем углы */
+.carousel-button:hover {
+	background-color: var(--color-primary-blue); /* Цвет фона при наведении */
+	border: 1px solid var(--color-primary-white); /* Цвет рамки при наведении*/
+}
+
+.carousel-button:hover .carousel-arrow {
+	color: var(--color-primary-white); /* Цвет стрелки при наведении */
+}
+
+.carousel-arrow {
+	width: 16px; /* Ширина стрелки */
+	height: 16px; /* Высота стрелки */
+	color: var(--color-primary-navy); /* Цвет стрелки */
+}
+
+.carousel-button.next-slide {
+	transform: rotate(180deg); /* Разворот элемента */
 }
 
 /* Contacts-section */
