@@ -131,7 +131,7 @@ img {
 }
 
 .header-social-icons svg {
-	color: var(--color-primary-navy); /* Цвет иконок */
+	fill: var(--color-primary-navy); /* Цвет иконок */
 	width: 32px;
 	height: 32px;
 }
@@ -262,6 +262,25 @@ img {
 	text-transform: capitalize;
 }
 
+/* Decorations-stars */
+
+.star_1 {
+	width: 16px; /* Ширина звезды */
+	height: 16px; /* Высота звезды */
+	fill: var(--color-secondary-gray-light); /* Цвет звезды */
+}
+
+.star_2 {
+	width: 40px; /* Ширина звезды */
+	height: 40px; /* Высота звезды */
+	fill: var(--color-primary-blue); /* Цвет звезды */
+}
+
+.star_3 {
+	width: 64px; /* Ширина звезды */
+	height: 64px; /* Высота звезды */
+	fill: var(--color-secondary-navy); /* Цвет звезды */
+}
 /* Why-we-section */
 
 .why-we-container {
@@ -294,7 +313,7 @@ img {
 .wy-why-advantages svg {
 	width: 48px;
 	height: 48px;
-	color: var(--color-primary-blue);
+	fill: var(--color-primary-blue);
 }
 
 /* Our-procedures-section */
@@ -333,6 +352,7 @@ img {
 	height: 44px; /* Высота кнопки */
 	border-radius: 50%; /* Круг кнопки */
 	border: 1px solid var(--color-primary-navy); /* Цвет рамки */
+	/* fill: var(--color-primary-navy);  Цвет стрелки будет наследоваться от самой стрелки */
 	background-color: transparent; /* Прозрачный фон кнопки*/
 	padding: 0; /* Убираем внутренние отступы */
 	cursor: pointer; /* Курсор при наведении */
@@ -345,13 +365,13 @@ img {
 }
 
 .carousel-button:hover .carousel-arrow {
-	color: var(--color-primary-white); /* Цвет стрелки при наведении */
-}
+	fill: var(--color-primary-white);
+} /* Цвет стрелки при наведении, фон кнопки меняет цвет при наведении и в это же момент заливка меняет цвет */
 
 .carousel-arrow {
 	width: 16px; /* Ширина стрелки */
 	height: 16px; /* Высота стрелки */
-	color: var(--color-primary-navy); /* Цвет стрелки */
+	fill: var(--color-primary-navy); /* Цвет стрелки */
 }
 
 .carousel-button.next-slide {
@@ -455,7 +475,7 @@ img {
 }
 
 .footer-social-icons svg {
-	color: var(--color-primary-white); /* Цвет иконок */
+	fill: var(--color-primary-white); /* Цвет иконок */
 	width: 42px;
 	height: 42px;
 }
