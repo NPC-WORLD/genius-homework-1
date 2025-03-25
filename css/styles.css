@@ -67,7 +67,7 @@ p {
 
 body {
 	background-color: var(--color-primary-white);
-	font-family: Roboto, sans-serif;
+	font-family: 'Roboto', sans-serif;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 1.2;
@@ -93,8 +93,17 @@ img {
 	background-color: black;
 }
 
+.visually-hidden {
+	position: absolute;
+	left: -10000px;
+	top: auto;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
 .container {
-	width: 100%; /* Занимает всю доступную ширину родительского элемента */
+	width: 100%; /* Контент занимает всю доступную ширину родительского элемента */
 	max-width: 1288px; /* Ширина контента + 48px, потому что box-sitizing:border box, не входят в эту ширину */
 	margin: 0 auto; /* Центрируем контент */
 	padding: 0 24px; /* Отступы от краёв контейнера, чтобы не прилипали */
@@ -217,7 +226,7 @@ img {
 }
 
 .button:hover {
-	color: var(--color-primary-navy);
+	color: var(--color-primary-white);
 	background-color: transparent;
 }
 
@@ -245,24 +254,26 @@ img {
 }
 
 .about-us-sessions {
-	position: relative; /* Позиционирование относительно родителя */
-	display: flex; /* Делаем flex-контейнер */
-	flex-direction: column; /* Располагаем элементы по вертикали */
-}
-
-.about-us-images {
-	position: relative; /* Позиционирование относительно родителя */
 	display: flex; /* Делаем flex-контейнер */
 	flex-direction: column; /* Располагаем элементы по вертикали */
 	gap: 40px; /* Расстояние между элементами */
+	position: relative; /* Позиционирование относительно родителя */
 }
 
-.about-us-photo .after {
+.icon {
 	position: absolute; /* Позиционирование относительно родителя */
 }
 
+.image-wrapper {
+	position: relative; /* Позиционирование звёзд относительно родителя */
+}
+
 .about-us-photo {
-	border-radius: 50%;
+	border-radius: 50%; /* Скругляем углы фото */
+}
+
+.after {
+	transform: translateX(50%); /* Сдвигаем элемент вправо */
 }
 
 .about-us-title {
@@ -284,18 +295,24 @@ img {
 	width: 16px; /* Ширина звезды */
 	height: 16px; /* Высота звезды */
 	fill: var(--color-secondary-gray-light); /* Цвет звезды */
+	bottom: 10%; /* Отступ звезды снизу */
+	right: 1%; /* Отступ звезды справа */
 }
 
 .star_2 {
 	width: 40px; /* Ширина звезды */
 	height: 40px; /* Высота звезды */
 	fill: var(--color-primary-blue); /* Цвет звезды */
+	top: 10%; /* Отступ звезды сверху */
+	right: -5%; /* Отступ звезды справа */
 }
 
 .star_3 {
 	width: 64px; /* Ширина звезды */
 	height: 64px; /* Высота звезды */
 	fill: var(--color-secondary-navy); /* Цвет звезды */
+	top: -5%; /* Отступ звезды сверху */
+	left: 25%; /* Отступ звезды слева */
 }
 /* Why-we-section */
 
@@ -527,4 +544,119 @@ img {
 	flex-direction: column; /* Располагаем элементы по вертикали */
 	gap: 16px; /* Добавляем отступы между элементами */
 	flex-grow: 1; /* Растягиваем информацию на всё доступное пространство */
+}
+
+/* Modal  */
+
+.backdrop {
+	background-color: var(--color-secondary-gray-light); /* Цвет фона */
+	position: fixed; /* Фиксированное позиционирование */
+	top: 0; /* Отступ сверху */
+	left: 0; /* Отступ слева */
+	right: 0; /* Отступ справа */
+	bottom: 0; /* Отступ снизу */
+	padding: 20px 0; /* Внутренние отступы */
+	display: flex; /* Делаем flex-контейнер */
+	justify-content: center; /* Выравниваем по центру */
+	align-items: center; /* Выравниваем по центру */
+}
+
+.modal-window {
+	position: relative; /* Позиционирование относительно родителя */
+	background-color: var(--color-secondary-navy); /* Цвет фона */
+	width: 100%; /* Ширина */
+	max-width: 680px; /* Максимальная ширина */
+	height: 100%; /* Высота */
+	max-height: 725px; /* Максимальная высота */
+	border-radius: 48px; /* Скругляем углы */
+	padding: 42px 144px; /* Внутренние отступы */
+	overflow-y: auto; /* Появление скроллбара */
+}
+
+.modal-btn-close {
+	position: absolute; /* Позиционирование относительно родителя */
+	top: 42px; /* Отступ сверху */
+	right: 42px; /* Отступ справа */
+}
+
+/* Form */
+
+.form-field {
+	margin-bottom: 24px; /* Отступ снизу */
+}
+
+.form-label {
+	display: block; /* Блочный элемент, потому что изначальное display:inline */
+}
+
+.form-input {
+	padding: 16px 42px; /* Внутренние отступы в самом input */
+	border: 2px solid var(--color-secondary-gray-light); /* Цвет рамки */
+	border-radius: 32px; /* Скругляем углы */
+	background-color: transparent; /* Прозрачный фон */
+	width: 100%; /* Ширина */
+}
+
+.form-input:focus {
+	border-color: var(--color-secondary-gray-light); /* Цвет рамки */
+	outline: none; /* Убираем автоматическую рамку при фокусе */
+	background-color: var(--color-secondary-gray-light); /* Цвет фона */
+}
+
+.form-input::placeholder {
+	color: var(--color-primary-white); /* Цвет плейсхолдера */
+	font-size: 13px; /* Размер шрифта */
+	font-family: 'Roboto', sans-serif; /* Шрифт */
+	font-weight: 400; /* Толщина шрифта */
+}
+
+.form-input:focus::placeholder {
+	color: var(--color-primary-white); /* Цвет текста  */
+}
+
+.form-button {
+	display: block; /* Блочный элемент, потому что кнопка не блок*/
+	margin: 0 auto 8px; /* Отступ слева и справа auto, центрируем кнопку*/
+}
+
+.form-policy {
+	font-family: 'Roboto', sans-serif; /* Шрифт */
+	font-size: 12px; /* Размер шрифта */
+	font-weight: 400; /* Толщина шрифта */
+	line-height: 1.5; /* Межстрочный интервал */
+	color: var(--color-secondary-gray-light); /* Цвет текста */
+	text-align: center; /* Выравниваем текст по центру */
+	margin: 0 auto; /* Отступ слева и справа auto, центрируем текст */
+	max-width: 220px; /* Максимальная ширина текста */
+}
+
+.form-policy-link {
+	color: var(--color-secondary-gray-light); /* Цвет текста */
+	text-decoration: underline; /* Подчеркивание */
+	text-underline-offset: 2px; /* Отступ текс от линии подчёркивания */
+}
+
+.form-title {
+	font-family: 'Play', sans-serif; /* Шрифт */
+	font-size: 64px; /* Размер шрифта */
+	color: var(--color-primary-white); /* Цвет текста */
+	font-weight: 700; /* Толщина шрифта */
+	text-align: center; /* Выравниваем текст по центру */
+	margin-bottom: 40px; /* Отступ снизу */
+}
+
+.form-text {
+	font-family: 'Roboto', sans-serif; /* Шрифт */
+	font-size: 22px; /* Размер шрифта */
+	color: var(--color-primary-white); /* Цвет текста */
+	font-weight: 600; /* Толщина шрифта */
+	text-align: center; /* Выравниваем текст по центру */
+	margin: 0 auto 32px; /* Отступ снизу */
+	max-width: 276px;
+}
+
+.form-accent {
+	font-family: 'Roboto', sans-serif; /* Шрифт */
+	font-size: 22px; /* Размер шрифта */
+	color: var(--color-primary-blue); /* Цвет текста */
 }
