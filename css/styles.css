@@ -89,10 +89,6 @@ ul {
 	list-style-type: none; /* Убираем маркеры у списка */
 }
 
-img {
-	background-color: black;
-}
-
 .visually-hidden {
 	position: absolute;
 	left: -10000px;
@@ -115,8 +111,9 @@ img {
 	position: absolute; /* Позиционирование относительно ближайшего позиционированного родителя */
 	top: 0;
 	left: 0;
-	width: 100%;
+	width: 100%; /* Ширина */
 	padding: 32px 0; /* Отступы сверху и снизу */
+	background-color: rgba(255, 255, 255, 0.25); /* Цвет текста */
 }
 
 .header-container {
@@ -169,10 +166,6 @@ img {
 
 .accent {
 	color: var(--color-primary-blue);
-}
-
-.accent-text {
-	font-weight: 600;
 }
 
 .section-title {
@@ -230,6 +223,13 @@ img {
 	background-color: transparent;
 }
 
+.hero-container {
+	display: flex; /* Делаем flex-контейнер */
+	flex-direction: column; /* Располагаем элементы по вертикали */
+	align-items: flex-start; /* Выравниваем элементы по левому краю */
+	margin-top: 80px; /* Отступ сверху */
+}
+
 .hero-intro {
 	margin-bottom: 16px; /* Отступ снизу */
 }
@@ -257,36 +257,29 @@ img {
 	display: flex; /* Делаем flex-контейнер */
 	flex-direction: column; /* Располагаем элементы по вертикали */
 	gap: 40px; /* Расстояние между элементами */
-	position: relative; /* Позиционирование относительно родителя */
-}
-
-.icon {
-	position: absolute; /* Позиционирование относительно родителя */
-}
-
-.image-wrapper {
-	position: relative; /* Позиционирование звёзд относительно родителя */
-}
-
-.about-us-photo {
-	border-radius: 50%; /* Скругляем углы фото */
-}
-
-.after {
-	transform: translateX(50%); /* Сдвигаем элемент вправо */
 }
 
 .about-us-title {
 	margin-top: 40px; /* Отступ сверху */
 }
 
-.about-us-text {
-	line-height: 1.7;
+.about-us-photo {
+	border-radius: 50%; /* Скругляем углы */
 }
 
-.accent-about-us {
-	color: var(--color-primary-blue);
-	text-transform: capitalize;
+.about-us-text {
+	line-height: 1.7; /* Межстрочный интервал */
+	font-size: 22px; /* Размер шрифта */
+}
+
+.about-us-accent {
+	color: var(--color-primary-blue); /* Цвет текста */
+	text-transform: capitalize; /* Преобразование текста в заглавные буквы */
+}
+
+.about-us-accent-text {
+	font-weight: 600; /* Толщина шрифта */
+	text-transform: capitalize; /* Преобразование текста в заглавные буквы */
 }
 
 /* Decorations-stars */
@@ -369,25 +362,40 @@ img {
 	display: flex;
 	width: 344px; /* Ширина элемента */
 	height: 456px; /* Высота элемента */
-	justify-content: center; /* Выравниваем элементы по центру */
 	align-items: center; /* Выравниваем элементы по центру */
 	overflow: hidden; /* Скрытие элементов, выходящих за границы */
 	border-radius: 4px 120px; /* Скругляем углы фото */
+	transition: transform 0.3s; /* Плавное изменение размера элемента */
+}
+
+.procedure-item:hover {
+	transform: scale(1.05); /* Увеличиваем элемент при наведении */
 }
 
 .procedure {
 	position: relative; /* Позиционирование относительно родителя */
 	margin: 0; /* Центрируем элемент */
+}
+
+.procedure::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	background: linear-gradient(
 		180.05deg,
 		rgba(1, 28, 68, 0) 48.53%,
 		rgba(1, 28, 68, 0.725825) 84.61%,
 		#011c44 101.39%
 	);
+	z-index: 2; /* Помещаем градиент над изображением */
 }
 
 .procedure-photo {
-	mix-blend-mode: multiply; /* Смешивание цветов */
+	position: relative; /* Создаем контекст для z-index */
+	z-index: 1; /* Помещаем изображение под градиент */
 }
 
 .procedure-text {
@@ -397,6 +405,7 @@ img {
 	font-size: 22px; /* Размер шрифта */
 	color: yellow; /* Цвет текста */
 	text-align: center; /* Выравниваем текст по центру */
+	z-index: 3; /* Помещаем текст над градиентом */
 }
 
 /* flex-basis: calc((100% - 32px) / 3); */
@@ -437,10 +446,6 @@ img {
 }
 
 /* Contacts-section */
-
-.contacts-section {
-	padding-bottom: 96px; /* Отступ секции снизу от футера */
-}
 
 .contacts-map {
 	border: none; /* Убираем рамку */
@@ -549,7 +554,7 @@ img {
 /* Modal  */
 
 .backdrop {
-	background-color: var(--color-secondary-gray-light); /* Цвет фона */
+	background-color: rgb(0, 0, 0, 0.5); /* Цвет фона */
 	position: fixed; /* Фиксированное позиционирование */
 	top: 0; /* Отступ сверху */
 	left: 0; /* Отступ слева */
@@ -559,6 +564,15 @@ img {
 	display: flex; /* Делаем flex-контейнер */
 	justify-content: center; /* Выравниваем по центру */
 	align-items: center; /* Выравниваем по центру */
+	transition: opacity 0.3s, visibility 0.3s; /* Плавное изменение прозрачности */
+	z-index: 9999; /* Помещаем окно над всеми элементами */
+}
+
+.backdrop.is-hidden {
+	/* Скрываем фон модального окна после закрытия */
+	opacity: 0; /* Прозрачность */
+	visibility: none; /* Невидимость элемента для браузера */
+	pointer-events: none; /* Отключаем события мыши */
 }
 
 .modal-window {

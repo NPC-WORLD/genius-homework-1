@@ -70,13 +70,17 @@
 		<main>
 			<section class="hero-section">
 				<div class="container">
-					<p class="hero-intro">Косметологічна клініка</p>
-					<h1 lang="en" class="hero-title">beauty <br />zone</h1>
-					<button class="button" type="button">Замовити дзвінок</button>
-					<p class="hero-consultation">
-						Запишись та отримай безкоштовну<br />
-						консультацію нашого косметолога
-					</p>
+					<div class="hero-container">
+						<p class="hero-intro">Косметологічна клініка</p>
+						<h1 lang="en" class="hero-title">beauty <br />zone</h1>
+						<button class="button modal-btn-open" type="button">
+							Замовити дзвінок
+						</button>
+						<p class="hero-consultation">
+							Запишись та отримай безкоштовну<br />
+							консультацію нашого косметолога
+						</p>
+					</div>
 				</div>
 			</section>
 			<section id="about-us-section">
@@ -85,40 +89,39 @@
 						<div class="about-us-content">
 							<h2 class="about-us-title section-title">
 								Перевтілюйтесь <br />в
-								<span lang="en" class="accent-about-us">beauty zone!</span>
+								<span lang="en" class="about-us-accent">beauty zone!</span>
 							</h2>
 							<p class="about-us-text">
 								Наша косметологічна клініка пропонує вам професійні послуги
 								<br />з догляду за шкірою обличчя та тіла.
 							</p>
 							<p class="about-us-text">
-								B <span lang="en" class="accent-text">beauty zone</span> ми
-								гарантуємо найвищі стандарти якості <br />та приємний сервіс.
+								B
+								<span lang="en" class="about-us-accent-text">beauty zone</span>
+								ми гарантуємо найвищі стандарти якості <br />та приємний сервіс.
 								Наші косметологічні процедури та препарати <br />допоможуть вам
 								підтримувати свою красу та молодість.<br />З нами краса
 								назавжди!
 							</p>
 						</div>
 						<div class="about-us-sessions">
-							<div class="image-wrapper">
-								<img
-									class="about-us-photo before"
-									src="img/before-procedure.jpg"
-									alt="Фото до процедури"
-								/>
+							<img
+								class="about-us-photo before"
+								src="img/before-procedure.jpg"
+								alt="Фото до процедури"
+							/>
+							<img
+								class="about-us-photo after"
+								src="img/after-procedure.jpg"
+								alt="Фото після процедури"
+							/>
+							<div class="icon-decorative-star">
 								<svg class="icon star_1">
 									<use href="../icons/icons.svg#icon-star_1"></use>
 								</svg>
 								<svg class="icon star_2">
 									<use href="../icons/icons.svg#icon-star_2"></use>
 								</svg>
-							</div>
-							<div class="image-wrapper">
-								<img
-									class="about-us-photo after"
-									src="img/after-procedure.jpg"
-									alt="Фото після процедури"
-								/>
 								<svg class="icon star_3">
 									<use href="../icons/icons.svg#icon-star_3"></use>
 								</svg>
@@ -127,7 +130,7 @@
 					</div>
 				</div>
 			</section>
-			<section class="section" id="why-we-section">
+			<section class="why-we-section section" id="why-we-section">
 				<div class="container">
 					<h2 class="why-we-title section-title centering">
 						Чому люди <br />
@@ -376,7 +379,7 @@
 							required
 						/>
 					</div>
-					<button class="form-button button" type="button">
+					<button class="form-button button" type="submit">
 						Записатись безкоштовно
 					</button>
 					<p class="form-policy">
@@ -388,5 +391,6 @@
 				</form>
 			</div>
 		</div>
+		<script src="js/modal.js"></script>
 	</body>
 </html>
