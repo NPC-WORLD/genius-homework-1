@@ -114,6 +114,7 @@ ul {
 	width: 100%; /* Ширина */
 	padding: 32px 0; /* Отступы сверху и снизу */
 	background-color: rgba(255, 255, 255, 0.25); /* Цвет текста */
+	backdrop-filter: blur(5px); /* Размытие фона */
 }
 
 .header-container {
@@ -448,8 +449,18 @@ ul {
 /* Contacts-section */
 
 .contacts-map {
+	display: flex; /* Располагаем элементы в строку */
+	flex-shrink: 0; /* Запрещаем уменьшение размера */
 	border: none; /* Убираем рамку */
 	border-radius: 32px; /* Скругляем углы */
+	width: 605px; /* Ширина карты */
+	height: 481px; /* Высота карты */
+}
+
+.contacts-container {
+	display: flex; /* Делаем flex-контейнер */
+	gap: 32px; /* Расстояние между элементами */
+	flex-grow: 0;
 }
 
 /* Footer */
@@ -578,9 +589,9 @@ ul {
 .modal-window {
 	position: relative; /* Позиционирование относительно родителя */
 	background-color: var(--color-secondary-navy); /* Цвет фона */
-	width: 100%; /* Ширина */
+	width: auto; /* Ширина */
 	max-width: 680px; /* Максимальная ширина */
-	height: 100%; /* Высота */
+	height: auto; /* Высота */
 	max-height: 725px; /* Максимальная высота */
 	border-radius: 48px; /* Скругляем углы */
 	padding: 42px 144px; /* Внутренние отступы */
