@@ -109,6 +109,7 @@ ul {
 
 .header {
 	position: absolute; /* Позиционирование относительно ближайшего позиционированного родителя */
+	z-index: 1; /* Помещаем шапку над всеми элементами */
 	top: 0;
 	left: 0;
 	width: 100%; /* Ширина */
@@ -121,7 +122,6 @@ ul {
 	display: flex; /* Делаем flex-контейнер */
 	align-items: center; /* Выравниваем элементы по вертикали */
 	gap: 40px; /* Расстояние между элементами */
-	margin-bottom: 16px; /* Отступ снизу */
 }
 
 .header-nav {
@@ -183,19 +183,22 @@ ul {
 /* Hero section  */
 
 .hero-section {
-	padding: 80px 0; /* Отступы сверху и снизу */
+	position: relative; /* Позиционирование относительно ближайшего позиционированного родителя */
+	z-index: 0; /* Помещаем секцию ниже всех элементов */
+	padding: 105px 0 0 200px; /* Отступы сверху и снизу */
 	background-image: linear-gradient(
-		89.38deg,
-		#ffffff 30.62%,
-		rgba(255, 255, 255, 0.850898) 41.31%,
-		rgba(255, 255, 255, 0.193204) 58.65%,
-		rgba(255, 255, 255, 0) 72.78%
-	);
-	background-image: url(../img/procedure.jpg);
+			89.38deg,
+			#ffffff 30.62%,
+			rgba(255, 255, 255, 0.850898) 41.31%,
+			rgba(255, 255, 255, 0.193204) 58.65%,
+			rgba(255, 255, 255, 0) 72.78%
+		),
+		url(../img/procedure.jpg);
 	background-repeat: no-repeat;
-	background-position: center top;
+	background-position: top;
 	background-size: cover; /* Растягиваем изображение на всю ширину и высоту */
 	background-attachment: scroll; /* Фиксация фона */
+	height: 100vh; /* Высота секции */
 }
 
 .hero-title {
@@ -220,15 +223,14 @@ ul {
 }
 
 .button:hover {
-	color: var(--color-primary-white);
-	background-color: transparent;
+	color: var(--color-primary-blue);
+	background-color: var(--color-primary-white); /* Цвет фона при наведении */
 }
 
 .hero-container {
 	display: flex; /* Делаем flex-контейнер */
 	flex-direction: column; /* Располагаем элементы по вертикали */
 	align-items: flex-start; /* Выравниваем элементы по левому краю */
-	margin-top: 80px; /* Отступ сверху */
 }
 
 .hero-intro {
@@ -258,6 +260,7 @@ ul {
 	display: flex; /* Делаем flex-контейнер */
 	flex-direction: column; /* Располагаем элементы по вертикали */
 	gap: 40px; /* Расстояние между элементами */
+	position: relative; /* Позиционирование относительно родителя */
 }
 
 .about-us-title {
@@ -266,6 +269,14 @@ ul {
 
 .about-us-photo {
 	border-radius: 50%; /* Скругляем углы */
+}
+
+.about-us-photo.after {
+	transform: translate(50%); /* Смещение фото вниз */
+}
+
+.icon {
+	position: absolute; /* Позиционирование относительно родителя */
 }
 
 .about-us-text {
